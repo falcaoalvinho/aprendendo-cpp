@@ -1,2 +1,2 @@
 # aprendendo-cpp
-O objetivo desse repsitório é manter arquivados os primeiros registros com lógica de programação usando c++, e algumas de suas bibliotecas para projetos futuros.
+O objetivo deste repositório é manter arquivados os meu primeiros códigos usando c++, registrando o processo de aprendizado de lógica de programação em uma linguagem de um nível mais baixo do que o qual estou acostumado. Optei por aprender C++ dado não só o melhor contato com conceitos que fundamentam a programação, mas também pelas possibilidades que essa ferramenta tráz especialmente da perspectiva do desenvolvimento de jogos digitais, objeto de meu interesse desde que me entendo por usuário de computadores.
