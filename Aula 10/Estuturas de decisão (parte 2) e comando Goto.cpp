@@ -19,7 +19,7 @@ int main(){
 	string situacao;
 	
 	novoaluno:
-		
+	
 	system("cls");
 	
 	cout << "Digite a primeira nota do aluno: ";
