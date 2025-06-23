@@ -14,11 +14,6 @@ using namespace std;
 	*/
 	
 int main(){
-	
-	/*
-	
-	*/
-	
 	list <string> nomes;
 	list<string>::iterator it; // Permite controlar a posição aonde o objeto será alocado na lista
 	string nome;
@@ -30,7 +25,7 @@ int main(){
 		nomes.push_front(nome);
 	}
 	
-	cout << "\n\n";
+	cout << "\n\ninsert()";
 	
 	// Exemplo de inserção de dados usando iterator
 	it = nomes.begin();
@@ -43,6 +38,33 @@ int main(){
 	for(string nome: nomes){
 		cout << "\nNome: " << nome;
 	}
+	
+	// Metódo erase(), permite deletar elementos de qualquer lugar da lista
+	// OBS: ele deleta a posição que vier depois da mencionada
+	nomes.erase(++it);
+	cout << "\n\nerase()";	
+	for(string nome: nomes){
+		cout << "\nNome: " << nome;
+	}
+	
+	//Metódo merge(), mescla duas listas em uma só
+	list <string> nomes2;
+	nomes2.push_front("Willian");
+	nomes2.push_front("Xuxa");
+	nomes2.push_front("Yasmin");
+	nomes2.push_front("Zulu");
+	
+	nomes.merge(nomes2);
+	
+	cout << "\n\nmerge()";	
+	for(string nome: nomes){
+		cout << "\nNome: " << nome;
+	}
+	
+	// Metódo clear(), limpa os dados da lista transformando ela numa lista vazia
+	nomes.clear();
+	cout << "\n\nTamanho da lista depois do clear(): " << nomes.size();	
+
 	
 	return 0;
 }
