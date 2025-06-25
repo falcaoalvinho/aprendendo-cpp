@@ -4,7 +4,7 @@ using namespace std;
 	
 /*
 	STRUCT
-		-> Estruturas que permitem armazenar dentro de sua definição metódos e variáveis que pidem ter seu valores definidos e chamados, desde que esse chamado
+		-> Estruturas que permitem armazenar dentro de sua definição metódos e variáveis que podem ter seu valores definidos e chamados, desde que esse chamado
 		venha a partir de um objeto do tipo criado através do struct
 		
 		-> Uma única definição pode ser usada para criar diferentes instâncias do objeto, permitindo que diferentes instâncias recebam diferentes valores em suas
@@ -15,10 +15,57 @@ using namespace std;
 			struct nome {variáveis e funções}
 */
 struct Carro {
+	// Variáveis
 	string modelo;
 	string cor;
 	int ano;
+	float velocidade;
 	float velocidade_max;
+	
+	// Metódos do nosso struct
+	//OBS: Os metódos de um struct não precisam ser prototipados!
+	// Metódo construtor
+	void novoCarro(string p_modelo, string p_cor, int p_ano, float p_velocidade_max){
+		modelo = p_modelo;
+		cor = p_cor;
+		ano = p_ano;
+		velocidade = 0;
+		velocidade_max = p_velocidade_max;
+	}
+	
+	// Metódo para exibir variáveis do carro
+	void especificacoes(){
+		cout << "\nO nome do carro: " << modelo;
+		cout << "\nA cor do carro: " << cor;
+		cout << "\nO ano do carro: " << ano;
+		cout << "\nVelocidade do carro: " << velocidade;
+		cout << "\nA velocidade máxima do carro: " << velocidade_max;
+	}
+	
+	// Metodo para buzinar 
+	void buzinar(){
+		cout << "\n" << modelo << " acabou de buzinar";
+	}
+	
+	// Metódo para acelerar o carro aumentando sua velocidade
+	void acelerar(){
+		float aceleracao;
+		
+		cout << "\nQuanto o carro deve acelerar: ";
+		cin >> aceleracao;
+		
+		if ((aceleracao + velocidade) <= velocidade_max){
+			velocidade += aceleracao;
+			cout << "\n" << modelo << " acabou de acelerar para " << velocidade + aceleracao;
+			
+			if (velocidade < 0){
+				velocidade = 0;
+			}
+		}
+		else {
+			velocidade = velocidade_max;
+		}
+	}
 };
 
 int main(){
@@ -49,5 +96,20 @@ int main(){
 	cout << "\nA cor do carro: " << maverick.cor;
 	cout << "\nO ano do carro: " << maverick.ano;
 	cout << "\nA velocidade máxima do carro: " << maverick.velocidade_max;
+	
+	cout<< "\n\n";
+	
+	// Exempos da aula 34
+	// Usando metodos do struct
+	Carro chevette;
+	
+	chevette.novoCarro("Chevrolet Chevette", "Verde", 1973, 220);
+	chevette.especificacoes();
+	
+	cout << "\n\n";
+	
+	chevette.buzinar();
+	chevette.acelerar();
+	chevette.especificacoes();
 	return 0;
 }
