@@ -1,5 +1,4 @@
 #include <iostream>
-
 using namespace std;
 	
 /*
@@ -35,10 +34,10 @@ struct Carro {
 	
 	// Metódo para exibir variáveis do carro
 	void especificacoes(){
-		cout << "\nO nome do carro: " << modelo;
-		cout << "\nA cor do carro: " << cor;
-		cout << "\nO ano do carro: " << ano;
-		cout << "\nVelocidade do carro: " << velocidade;
+		cout << "\nO nome do carro.............: " << modelo;
+		cout << "\nA cor do carro..............: " << cor;
+		cout << "\nO ano do carro..............: " << ano;
+		cout << "\nVelocidade do carro.........: " << velocidade;
 		cout << "\nA velocidade máxima do carro: " << velocidade_max;
 	}
 	
@@ -92,9 +91,9 @@ int main(){
 	maverick.ano = 1980;
 	maverick.velocidade_max = 300;
 	
-	cout << "O nome do carro: " << maverick.modelo;
-	cout << "\nA cor do carro: " << maverick.cor;
-	cout << "\nO ano do carro: " << maverick.ano;
+	cout << "O nome do carro...............: " << maverick.modelo;
+	cout << "\nA cor do carro..............: " << maverick.cor;
+	cout << "\nO ano do carro..............: " << maverick.ano;
 	cout << "\nA velocidade máxima do carro: " << maverick.velocidade_max;
 	
 	cout<< "\n\n";
@@ -111,5 +110,30 @@ int main(){
 	chevette.buzinar();
 	chevette.acelerar();
 	chevette.especificacoes();
+	
+	cout << "\n\n";
+	
+	// Usando Strcts em Arrays
+	Carro *carros = new Carro[5]; // Obs: este é um ponteiro, veremos mais sobre na proxima aula
+	
+	Carro carro1, carro2, carro3, carro4, carro5;
+	
+	carros[0] = carro1;
+	carros[1] = carro2;
+	carros[2] = carro3;
+	carros[3] = carro4;
+	carros[4] = carro5;
+	
+	carros[0].novoCarro("Palio Weekend", "Cinza-cromo", 2009, 180);
+	carros[1].novoCarro("Brasília", "Amarelo", 1985, 160);
+	carros[2].novoCarro("Belinda", "Verde-musgo", 1995, 160);
+	carros[3].novoCarro("Opala", "Azul-celeste", 1989, 220);
+	carros[4].novoCarro("HB20", "Branco", 2022, 200);
+
+	for(int i = 0; i < 5; ++i){
+		carros[i].especificacoes();	
+		cout << "\n\n";
+	}
+	
 	return 0;
 }
